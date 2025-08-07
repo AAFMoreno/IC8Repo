@@ -22,7 +22,7 @@ EOF
         
         stage('Install Dependencies') {
             steps {
-                sshagent(['ubuntu']) {
+                sshagent(['ubuntucorrect']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@18.212.139.211 <<EOF
 sudo apt update

@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sshagent(['ubuntu']) {
+                sshagent(['ubuntucorrect']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@18.212.139.211 <<EOF
 if [ ! -d "repo" ]; then
@@ -36,7 +36,7 @@ EOF
         
         stage('Build and Run') {
             steps {
-                sshagent(['ubuntu']) {
+                sshagent(['ubuntucorrect']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@18.212.139.211 <<EOF
 cd repo
